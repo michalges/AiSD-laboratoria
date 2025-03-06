@@ -7,19 +7,6 @@ import java.util.Scanner;
 
 public class Document {
     public static void loadDocument(String name, Scanner scan) {
-//        ArrayList<String> lines = new ArrayList<String>();
-//        try {
-//            File myObj = new File(name);
-//            scan = new Scanner(myObj);
-//            while (scan.hasNextLine()) {
-//                String data = scan.nextLine();
-//                lines.add(data);
-//            }
-//            scan.close();
-//        } catch (FileNotFoundException e) {
-//            System.out.println("An error occurred.");
-//            e.printStackTrace();
-//        }
         ArrayList<String> words = new ArrayList<String>();
         while (true) {
             String line = scan.nextLine();
