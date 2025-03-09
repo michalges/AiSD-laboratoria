@@ -20,15 +20,15 @@ public class Zad7 {
 
 class Array2DIterator<T> implements Iterator<T> {
     private final T[][] array;
-    private int posX = 0;
-    private int posY = 0;
+    private int row = 0;
+    private int col = 0;
 
     public Array2DIterator(T[][] array) {
         this.array = array;
     }
 
     public boolean hasNext() {
-        if (posX == 0 && posY == array.length){
+        if (row == 0 && col == array.length){
             return false;
         }
         return true;
@@ -38,11 +38,11 @@ class Array2DIterator<T> implements Iterator<T> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        T value = array[posY][posX];
-        posX++;
-        if (posX == array[0].length) {
-            posX = 0;
-            posY += 1;
+        T value = array[col][row];
+        row++;
+        if (row == array[0].length) {
+            row = 0;
+            col += 1;
         }
         return value;
     }

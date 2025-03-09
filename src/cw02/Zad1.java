@@ -3,7 +3,6 @@ package cw02;
 import cw02.Utils.ArrayIterator;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class Zad1 {
     public static void main(String[] args) {
