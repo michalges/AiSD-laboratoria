@@ -3,14 +3,14 @@ package cw02;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Zad2 {
+public class Zad3 {
     public static void main(String[] args) {
 
-        int n = 5;  // liczba poczatkowa
-        int m = 5;  // dlugosc tablicy
+        int m = 7;  // dlugosc tablicy
 
         Integer[] numbers = new Integer[m];
-        numbers[0] = n;
+        numbers[0] = 1;
+        numbers[1] = 1;
 
         FibbonciArrayIterator<Integer> it = new FibbonciArrayIterator<Integer>(numbers);
 
@@ -20,11 +20,11 @@ public class Zad2 {
     }
 }
 
-class ArrayGenerationIterator<T> implements Iterator<T> {
+class FibbonciArrayIterator<T> implements Iterator<T> {
     private final T[] array;
     private int pos = 0;
 
-    public ArrayGenerationIterator(T[] array) {
+    public FibbonciArrayIterator(T[] array) {
         this.array = array;
     }
 
@@ -35,7 +35,7 @@ class ArrayGenerationIterator<T> implements Iterator<T> {
     public T next() throws NoSuchElementException {
         if (hasNext()) {
             if(array[pos] == null){
-                array[pos] = (T) Integer.valueOf(((Number) array[pos-1]).intValue() + 1);
+                array[pos] = (T) Integer.valueOf(((Number) array[pos-2]).intValue() + ((Number) array[pos-1]).intValue());
             }
             return array[pos++];
         }

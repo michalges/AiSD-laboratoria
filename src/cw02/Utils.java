@@ -21,10 +21,6 @@ public class Utils {
             else throw new NoSuchElementException();
         }
 
-//        public int getPos() {
-//            return pos;
-//        }
-
         public void remove() {
             throw new UnsupportedOperationException();
         }
