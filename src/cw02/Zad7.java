@@ -55,7 +55,6 @@ class Array2DIterator<T> implements Iterator<T> {
         return value;
     }
 
-
     public void remove() {
         throw new UnsupportedOperationException();
     }
@@ -68,12 +67,12 @@ class Array2DIteratorReversed<T> implements Iterator<T> {
 
     public Array2DIteratorReversed(T[][] array) {
         this.array = array;
-        this.row = array.length - 1;
-        this.col = array[0].length - 1;
+        this.row = array[0].length - 1;
+        this.col = array.length - 1;
     }
 
     public boolean hasNext() {
-        if (row == 0 && col == 0){
+        if (row == array[0].length - 1 && col == -1){
             return false;
         }
         return true;
@@ -91,7 +90,6 @@ class Array2DIteratorReversed<T> implements Iterator<T> {
         }
         return value;
     }
-
 
     public void remove() {
         throw new UnsupportedOperationException();
